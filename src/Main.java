@@ -42,8 +42,12 @@ public class Main {
                     String shiftInput = scanner.nextLine().trim();
 
                     if (shiftInput.matches("-?\\d+")) {
-                        shiftValue = Integer.parseInt(shiftInput);
-                        break;
+                        try {
+                            shiftValue = Integer.parseInt(shiftInput);
+                            break;
+                        } catch (NumberFormatException e) {
+                            System.out.println("Shift value is too large or invalid. Please enter a smaller integer.\n");
+                        }
                     } else {
                         System.out.println("Invalid shift value. It must be an integer.\n");
                     }
@@ -69,12 +73,16 @@ public class Main {
                         }
                         break;
                     } else if (shiftInput.matches("-?\\d+")) {
-                        int shiftValue = Integer.parseInt(shiftInput);
-                        String decrypted = CaesarCipher.decrypt(textToDecrypt, shiftValue);
-                        System.out.println("Output: \"" + decrypted + "\"");
-                        break;
+                        try {
+                            int shiftValue = Integer.parseInt(shiftInput);
+                            String decrypted = CaesarCipher.decrypt(textToDecrypt, shiftValue);
+                            System.out.println("Output: \"" + decrypted + "\"");
+                            break;
+                        } catch (NumberFormatException e) {
+                            System.out.println("Shift value is too large or invalid. Please enter a smaller integer.\n");
+                        }
                     } else {
-                        System.out.println("Invalid shift value. It must be an integer or an empty input. \n");
+                        System.out.println("Invalid shift value. It must be an integer or an empty input.\n");
                     }
                 }
             }
