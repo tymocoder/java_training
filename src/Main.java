@@ -84,8 +84,36 @@ public class Main {
             }
             else if (choice == 2) {
                 System.out.println("Caesar Cipher Decryption was chosen");
-                System.out.print("Enter text to decrypt: ");
-                String textToDecrypt = scanner.nextLine();
+
+                String inputMode;
+                while (true) {
+                    System.out.print("Enter 'm' for manual text input or 'f' for file input: ");
+                    inputMode = scanner.nextLine().trim().toLowerCase();
+
+                    if (inputMode.equals("m") || inputMode.equals("f")) {
+                        break;
+                    } else {
+                        System.out.println("Invalid input. Enter 'm' for manual or 'f' for file!\n");
+                    }
+                }
+
+                String textToDecrypt;
+                if (inputMode.equals("f")) {
+                    while (true) {
+                        System.out.print("Enter file path: ");
+                        String filePath = scanner.nextLine().trim();
+
+                        try {
+                            textToDecrypt = java.nio.file.Files.readString(java.nio.file.Paths.get(filePath));
+                            break;
+                        } catch (java.io.IOException e) {
+                            System.out.println("Failed to read file: " + e.getMessage() + "\nPlease try again.\n");
+                        }
+                    }
+                } else {
+                    System.out.print("Enter text to decrypt: ");
+                    textToDecrypt = scanner.nextLine();
+                }
 
                 while (true) {
                     System.out.print("Enter shift value (integer) or leave empty to try all possible variants: ");
