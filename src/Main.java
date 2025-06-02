@@ -51,7 +51,7 @@ public class Main {
                     String filePath = scanner.nextLine().trim();
 
                     if (!filePath.toLowerCase().endsWith(".txt")) {
-                        System.out.println("\nInvalid path format. Please provide a path to a '.txt' file. Or use manual input.");
+                        System.out.println("\nInvalid path or file format. Please provide a path to a '.txt' file. Or use manual input.");
                         continue;
                     }
 
@@ -59,6 +59,7 @@ public class Main {
                         textToEncrypt = java.nio.file.Files.readString(java.nio.file.Paths.get(filePath));
                     } catch (java.io.IOException e) {
                         System.out.println("\nFailed to read file: " + e.getMessage());
+                        System.out.println("The path entered might be invalid");
                         continue;
                     }
                 } else {
@@ -116,6 +117,7 @@ public class Main {
                         textToDecrypt = java.nio.file.Files.readString(java.nio.file.Paths.get(filePath));
                     } catch (java.io.IOException e) {
                         System.out.println("\nFailed to read file: " + e.getMessage());
+                        System.out.println("The path entered might be invalid");
                         continue;
                     }
                 } else {
