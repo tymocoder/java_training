@@ -50,10 +50,15 @@ public class Main {
                     System.out.print("Enter file path: ");
                     String filePath = scanner.nextLine().trim();
 
+                    if (!filePath.toLowerCase().endsWith(".txt")) {
+                        System.out.println("\nInvalid path format. Please provide a path to a '.txt' file. Or use manual input.");
+                        continue;
+                    }
+
                     try {
                         textToEncrypt = java.nio.file.Files.readString(java.nio.file.Paths.get(filePath));
                     } catch (java.io.IOException e) {
-                        System.out.println("Failed to read file: " + e.getMessage());
+                        System.out.println("\nFailed to read file: " + e.getMessage());
                         continue;
                     }
                 } else {
@@ -99,16 +104,19 @@ public class Main {
 
                 String textToDecrypt;
                 if (inputMode.equals("f")) {
-                    while (true) {
-                        System.out.print("Enter file path: ");
-                        String filePath = scanner.nextLine().trim();
+                    System.out.print("Enter file path: ");
+                    String filePath = scanner.nextLine().trim();
 
-                        try {
-                            textToDecrypt = java.nio.file.Files.readString(java.nio.file.Paths.get(filePath));
-                            break;
-                        } catch (java.io.IOException e) {
-                            System.out.println("Failed to read file: " + e.getMessage() + "\nPlease try again.\n");
-                        }
+                    if (!filePath.toLowerCase().endsWith(".txt")) {
+                        System.out.println("\nInvalid path format. Please provide a path to a '.txt' file. Or use manual input.");
+                        continue;
+                    }
+
+                    try {
+                        textToDecrypt = java.nio.file.Files.readString(java.nio.file.Paths.get(filePath));
+                    } catch (java.io.IOException e) {
+                        System.out.println("\nFailed to read file: " + e.getMessage());
+                        continue;
                     }
                 } else {
                     System.out.print("Enter text to decrypt: ");
