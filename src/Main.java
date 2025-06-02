@@ -32,9 +32,35 @@ public class Main {
             }
 
             if (choice == 1) {
-                System.out.println("\nCaesar Cipher Encryption was chosen\n");
-                System.out.print("Enter text to encrypt: ");
-                String textToEncrypt = scanner.nextLine();
+                System.out.println("\nCaesar Cipher Encryption was chosen");
+                String inputMode;
+                while (true) {
+                    System.out.print("Enter 'm' for the manual text input or 'f' for the file input: ");
+                    inputMode = scanner.nextLine().trim().toLowerCase();
+
+                    if (inputMode.equals("m") || inputMode.equals("f")) {
+                        break;
+                    } else {
+                        System.out.println("\nInvalid input. Enter 'm' for manual or 'f' for file!");
+                    }
+                }
+
+                String textToEncrypt;
+                if (inputMode.equals("f")) {
+                    System.out.print("Enter file path: ");
+                    String filePath = scanner.nextLine().trim();
+
+                    try {
+                        textToEncrypt = java.nio.file.Files.readString(java.nio.file.Paths.get(filePath));
+                    } catch (java.io.IOException e) {
+                        System.out.println("Failed to read file: " + e.getMessage());
+                        continue;
+                    }
+                } else {
+                    System.out.print("Enter text to encrypt: ");
+                    textToEncrypt = scanner.nextLine();
+                }
+
 
                 int shiftValue;
                 while (true) {
@@ -69,7 +95,7 @@ public class Main {
                         System.out.println("\nTrying all possible shifts:\n");
                         for (int i = 1; i < 26; i++) {
                             String attempt = CaesarCipher.decrypt(textToDecrypt, i);
-                            System.out.printf("Shift %2d: \"%s\"%n", i, attempt);
+                            System.out.println("Shift " + i + ": " + attempt);
                         }
                         break;
                     } else if (shiftInput.matches("-?\\d+")) {
