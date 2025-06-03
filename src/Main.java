@@ -152,7 +152,15 @@ public class Main {
             }
             else if (choice == 3) {
                 System.out.println("Arithmetic Expression Evaluation was chosen");
-                // TODO
+                System.out.print("Enter arithmetic expression: ");
+                String inputExpression = scanner.nextLine().trim();
+
+                try {
+                    double result = ExpressionEvaluator.evaluate(inputExpression);
+                    System.out.println("Result: " + result);
+                } catch (Exception e) {
+                    System.out.println("Error evaluating expression: " + e.getMessage());
+                }
             }
             else {
                 System.out.println("Exit from the program was chosen");
