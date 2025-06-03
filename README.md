@@ -70,10 +70,10 @@ Follow this documentation if you need help: https://docs.github.com/en/repositor
 
 ### 2. How to run
 If the 1st step (above) was successful:
-- Open terminal (command prompt) on the PC or laptop
-- Navigate to the java_training/src/
-- Run in your terminal: javac Main.java
-- Run in your terminal: java Main
+- Open a terminal (command prompt) on your PC or laptop
+- Navigate to the project folder in the terminal
+- Run in the terminal (to compile files): javac ./src/*.java
+- Run in the terminal (to run the app): java -cp ./src Main
 
 ---
 
