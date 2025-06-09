@@ -6,7 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in); // The Scanner instance that reads text from the input stream
         boolean continueRunning = true; // The current state
 
-        System.out.println("Welcome to Gehtsoft Technical Assessment");
+        System.out.println("Welcome!");
 
         while (continueRunning) {
             System.out.println("\nPlease choose an option:");
