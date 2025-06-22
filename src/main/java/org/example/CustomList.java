@@ -28,4 +28,12 @@ public class CustomList<E> implements List<E> {
         size++;
         return true;
     }
+
+    @SuppressWarnings("unchecked")
+    public E get(int index) {
+        if(index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index " + index + " can't be retrieved from the list with size " + size);
+        }
+        return (E) customListElementsArray[index];
+    }
 }
