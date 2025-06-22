@@ -47,6 +47,7 @@ public class CustomList<E> implements List<E> {
         return oldElement;
     }
 
+    @SuppressWarnings("unchecked")
     public E remove(int index) {
         if(index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index " + index + " can't be removed from the list with size " + size);
@@ -64,5 +65,9 @@ public class CustomList<E> implements List<E> {
         customListElementsArray[size] = null;
 
         return removedElement;
+    }
+
+    public int size() {
+        return size;
     }
 }
