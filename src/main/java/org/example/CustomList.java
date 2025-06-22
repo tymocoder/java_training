@@ -46,4 +46,23 @@ public class CustomList<E> implements List<E> {
         customListElementsArray[index] = newElement;
         return oldElement;
     }
+
+    public E remove(int index) {
+        if(index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index " + index + " can't be removed from the list with size " + size);
+        }
+        E removedElement = (E) customListElementsArray[index];
+        int numberOfElementsToShift = size - index - 1;
+
+        if(numberOfElementsToShift > 0) {
+            // The System.arraycopy() method was used instead of the for() loop for the performance efficiency
+            System.arraycopy(customListElementsArray, index + 1, customListElementsArray, index, numberOfElementsToShift);
+        }
+
+        size--;
+        // Clear the last element reference to allow garbage collection
+        customListElementsArray[size] = null;
+
+        return removedElement;
+    }
 }
