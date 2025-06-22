@@ -36,4 +36,14 @@ public class CustomList<E> implements List<E> {
         }
         return (E) customListElementsArray[index];
     }
+
+    @SuppressWarnings("unchecked")
+    public E set(int index, E newElement) {
+        if(index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index " + index + " can't be set to the list with size " + size);
+        }
+        E oldElement = (E) customListElementsArray[index];
+        customListElementsArray[index] = newElement;
+        return oldElement;
+    }
 }
