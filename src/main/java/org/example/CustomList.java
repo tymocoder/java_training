@@ -11,14 +11,17 @@ public class CustomList<E> implements List<E> {
         customListElementsArray = new Object[DEFAULT_CAPACITY];
     }
 
+    @Override
     public int size() {
         return size;
     }
 
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    @Override
     public boolean add(E element) {
         if (size == customListElementsArray.length) {
             // The bitwise shift right used for performance
@@ -38,7 +41,7 @@ public class CustomList<E> implements List<E> {
         return true;
     }
 
-    @SuppressWarnings("unchecked")
+    @Override
     public E get(int index) {
         if(index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index " + index + " can't be retrieved from the list with size " + size);
@@ -47,7 +50,7 @@ public class CustomList<E> implements List<E> {
         return (E) customListElementsArray[index];
     }
 
-    @SuppressWarnings("unchecked")
+    @Override
     public E set(int index, E newElement) {
         if(index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index " + index + " can't be set to the list with size " + size);
@@ -58,7 +61,7 @@ public class CustomList<E> implements List<E> {
         return oldElement;
     }
 
-    @SuppressWarnings("unchecked")
+    @Override
     public E remove(int index) {
         if(index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index " + index + " can't be removed from the list with size " + size);
@@ -78,6 +81,7 @@ public class CustomList<E> implements List<E> {
         return removedElement;
     }
 
+    @Override
     public void clear() {
         for (int i = 0; i < size; i++) {
             customListElementsArray[i] = null;
