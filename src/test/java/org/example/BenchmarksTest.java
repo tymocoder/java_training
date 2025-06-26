@@ -28,7 +28,7 @@ public class BenchmarksTest {
     }
 
     private static void report(String listName, long memoryUsedAtStart, long timeAtStart, long timeAtEnd, long memoryUsedAtEnd) {
-        long timePerRunMs = (timeAtEnd - timeAtStart);
+        long timePerRunMs = (timeAtEnd - timeAtStart) / 1000000;
         long memoryPerRunMb = (memoryUsedAtEnd - memoryUsedAtStart) / (1024 * 1024);
 
         System.out.println("Test run result for " + listName + ": Execution time: " + timePerRunMs + " Ms | Memory usage: " + memoryPerRunMb + " MB");
