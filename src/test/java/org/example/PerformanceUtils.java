@@ -17,4 +17,11 @@ public class PerformanceUtils {
         long memoryOnFinishUsed = runtime.totalMemory() - runtime.freeMemory();
         return memoryOnFinishUsed - memoryOnStartUsed;
     }
+
+    public static long timeForRunNanosec(Runnable task) {
+        long timeOnStart = System.nanoTime();
+        task.run();
+        long timeOnFinish = System.nanoTime();
+        return timeOnFinish - timeOnStart;
+    }
 }

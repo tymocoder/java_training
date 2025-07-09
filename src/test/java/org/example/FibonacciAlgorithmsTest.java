@@ -20,6 +20,8 @@ public class FibonacciAlgorithmsTest {
     void performanceBenchmark() {
         int[] inputValues = {10, 20, 30, 35};
 
+        System.out.println("Fibonacci algorithms execution time test");
+
         for(int value: inputValues) {
             long recursiveResult = PerformanceUtils.timeForRunMillis(() -> FibonacciAlgorithms.fibonacciRecursive(value));
             long memoizedResult = PerformanceUtils.timeForRunMillis(() -> FibonacciAlgorithms.fibonacciMemoized(value));
@@ -40,6 +42,7 @@ public class FibonacciAlgorithmsTest {
         long memoizedResult = PerformanceUtils.memoryPerRunBytes(() -> FibonacciAlgorithms.fibonacciMemoized(value));
         long iterativeResult = PerformanceUtils.memoryPerRunBytes(() -> FibonacciAlgorithms.fibonacciIterative(value));
 
+        System.out.println("Fibonacci algorithms memory usage test");
         System.out.println("Test run result for recursive function with the value: " + value + ": Memory used: " + recursiveResult + " Bytes");
         System.out.println("Test run result for memoized recursive function with the value: " + value + ": Memory used: " + memoizedResult + " Bytes");
         System.out.println("Test run result for iterative function with the value: " + value + ": Memory used: " + iterativeResult + " Bytes");
