@@ -39,6 +39,6 @@ public class ArrayOperationsPerformanceTest {
                 System.out.println("-----------");
             }
         }
-        System.out.println("Both methods have the same time 0(n) and space 0(n) complexity, but the System.arraycopy has better performance for large arrays");
+        // Both methods have the same time 0(n) and space 0(n) complexity, but the System.arraycopy has better performance for large arrays
     }
 }
