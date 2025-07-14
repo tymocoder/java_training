@@ -17,6 +17,10 @@ public class CustomLinkedList<T> {
         return size;
     }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
     public void add(T value) {
         Node<T> newNode = new Node<>(value);
 
