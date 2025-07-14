@@ -57,6 +57,14 @@ public class CustomQueue<T> {
         return head.data;
     }
 
+    public T peekLast() {
+        if (size == 0) {
+            throw new IllegalStateException("Queue is empty");
+        }
+
+        return tail.data;
+    }
+
     public int size() {
         return size;
     }
