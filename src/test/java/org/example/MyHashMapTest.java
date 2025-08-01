@@ -67,9 +67,12 @@ public class MyHashMapTest {
         map.put("three", 3);
         Set<Map.Entry<String, Integer>> entries = map.entrySet();
         assertEquals(3, entries.size());
+
+        Map<String, Integer> expectedMap = Map.of("one", 1, "two", 2, "three", 3);
+
         for (Map.Entry<String, Integer> entry : entries) {
-            assertNotNull(entry.getKey());
-            assertNotNull(entry.getValue());
+            assertTrue(expectedMap.containsKey(entry.getKey()));
+            assertEquals(expectedMap.get(entry.getKey()), entry.getValue());
         }
     }
 
