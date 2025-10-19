@@ -1,4 +1,4 @@
-package org.example.digitalLibrary;
+package org.example.digitalLibraryApp;
 
 public interface LibraryItem {
     String getTitle();

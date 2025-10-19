@@ -1,4 +1,4 @@
-package org.example.digitalLibrary;
+package org.example.digitalLibraryApp;
 
 public abstract class AbstractLibraryItem implements LibraryItem{
 
