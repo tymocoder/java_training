@@ -1,4 +1,4 @@
-package org.example;
+package org.example.annotationsPractice;
 
 public class HelloWorld {
     public void printToConsole() {
