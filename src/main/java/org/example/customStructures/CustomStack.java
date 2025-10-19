@@ -1,4 +1,4 @@
-package org.example;
+package org.example.customStructures;
 
 public class CustomStack <T> {
     private Object[] stack;

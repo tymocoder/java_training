@@ -1,4 +1,4 @@
-package org.example;
+package org.example.customStructures;
 
 public class CustomLinkedList<T> {
     private static class Node<T> {

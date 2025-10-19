@@ -1,6 +1,5 @@
-package org.example.hw05;
+package org.example.multiThreadOperations;
 
-import org.example.PerformanceUtils;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileWriter;
@@ -19,13 +18,5 @@ public class MultithreadOperationsTest {
             System.err.println("Error while writing to the file");
             e.printStackTrace();
         }
-    }
-
-
-
-
-    for (int threadsNumber: THREADS_NUMBERS) {
-        long[] results = new long[1];
-        long streamTime = PerformanceUtils.timeForRunNanosec(() -> MultithreadOperations.sumParallelStream(threadsNumber));
     }
 }
