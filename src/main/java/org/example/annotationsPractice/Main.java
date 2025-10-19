@@ -1,4 +1,4 @@
-package org.example;
+package org.example.annotationsPractice;
 
 import java.util.Date;
 
