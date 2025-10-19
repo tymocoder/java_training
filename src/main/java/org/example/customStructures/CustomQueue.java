@@ -1,4 +1,4 @@
-package org.example;
+package org.example.customStructures;
 
 public class CustomQueue<T> {
     private static class Node<T> {

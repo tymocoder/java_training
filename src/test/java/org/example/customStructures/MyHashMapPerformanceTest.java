@@ -1,9 +1,9 @@
-package org.example;
+package org.example.customStructures;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.example.PerformanceUtils.timeForRunNanosec;
+import static org.example.customStructures.PerformanceUtils.timeForRunNanosec;
 
 public class MyHashMapPerformanceTest {
     private static final int NUMBER_OF_ACTIONS = 1_000;

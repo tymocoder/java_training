@@ -1,4 +1,4 @@
-package org.example.hw05;
+package org.example.multiThreadOperations;
 
 import java.util.concurrent.*;
 import java.util.stream.IntStream;
