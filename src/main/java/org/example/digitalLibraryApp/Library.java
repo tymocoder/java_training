@@ -1,4 +1,4 @@
-package org.example.digitalLibrary;
+package org.example.digitalLibraryApp;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +20,7 @@ public class Library {
         else {
             items.get(item.getTitle()).add(item);
         }
-        return "Item " + item.getTitle() + " was successfully added. ";
+        return "\nItem " + item.getTitle() + " was successfully added. ";
     };
 
     public String borrowItem(String title) {
@@ -30,9 +30,9 @@ public class Library {
                     return item.borrowItem();
                 }
             }
-            return "All items with the title " + title + " were already borrowed.";
+            return "\nAll items with the title " + title + " were already borrowed.";
         }
-        return "The library contains no items with the title " + title + ".";
+        return "\nThe library contains no items with the title " + title + ".";
     };
 
     public String returnItem(String title) {
@@ -42,13 +42,13 @@ public class Library {
                     return item.returnItem();
                 }
             }
-            return "All items with the title " + title + " were already returned. You can't return an extra item.";
+            return "\nAll items with the title " + title + " were already returned. You can't return an extra item.";
         }
-        return "The library contains no items with the title " + title + ". You can't return the item that doesn't belong to library.";
+        return "\nThe library contains no items with the title " + title + ". You can't return the item that doesn't belong to library.";
     };
 
     public void printAvailableItems() {
-        System.out.println("Next items are available in the library:");
+        System.out.println("\nNext items are available in the library:");
         for(Map.Entry<String, List<LibraryItem>> entry: items.entrySet()) {
             for(LibraryItem item: entry.getValue()) {
                 if(item.isAvailable()) {
