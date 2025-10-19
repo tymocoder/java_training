@@ -20,7 +20,7 @@ public abstract class AbstractLibraryItem implements LibraryItem{
         return available;
     }
 
-    public void setAvailable(boolean available) {
+    protected void setAvailable(boolean available) {
         this.available = available;
     }
 }
